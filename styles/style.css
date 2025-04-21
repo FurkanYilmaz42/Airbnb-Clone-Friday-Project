@@ -1,0 +1,598 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+Header {
+  display: grid;
+  grid-template-areas: "logo nav right";
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  gap: 0.6rem;
+  padding: 1rem 2rem;
+}
+@media (max-width: 992px) {
+  Header {
+    grid-template-areas: "logo logo right" "nav nav nav";
+  }
+}
+Header .logo {
+  grid-area: logo;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+Header .logo img {
+  width: 32px;
+}
+Header .logo span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e15d60;
+}
+@media (max-width: 992px) {
+  Header .logo span {
+    display: none;
+  }
+}
+Header nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  Header nav {
+    display: none;
+  }
+}
+Header nav a {
+  color: #000;
+  font-weight: 500;
+}
+Header .right {
+  grid-area: right;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+Header .right a {
+  font-size: 0.85rem;
+  color: #000;
+}
+Header .right .btn {
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: flex;
+  gap: 1rem;
+  transition: all 0.5s ease;
+}
+Header .right .btn:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.425);
+}
+
+footer {
+  padding: 2rem;
+  border-top: 1px solid #ddd;
+}
+footer section[aria-label=ideas] {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 2rem;
+}
+footer section[aria-label=ideas] h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+footer section[aria-label=ideas] nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+footer section[aria-label=ideas] nav a {
+  color: #444;
+  font-size: 1rem;
+}
+footer section[aria-label=ideas] nav a[aria-current=page] {
+  border-bottom: 2px solid #444;
+  padding-bottom: 2px;
+  font-weight: 600;
+}
+footer section[aria-label=ideas] div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+footer section[aria-label=ideas] div article h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+footer section[aria-label=ideas] div article p {
+  font-size: 0.85rem;
+  color: #777;
+}
+footer section[aria-label=ideas] button {
+  margin-top: 1rem;
+  background: none;
+  color: #444;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+footer section[aria-label=footer-links] {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem;
+  padding: 4rem;
+}
+footer section[aria-label=footer-links] .links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+footer section[aria-label=footer-links] .links h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+footer section[aria-label=footer-links] .links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+footer section[aria-label=footer-links] .links ul a {
+  color: #444;
+  font-size: 0.85rem;
+  transition: all 0.5s ease;
+}
+footer section[aria-label=footer-links] .links ul a:hover {
+  text-decoration: underline;
+}
+footer section[aria-label=footer-bottom] {
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+footer section[aria-label=footer-bottom] .left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+footer section[aria-label=footer-bottom] .left p {
+  font-size: 0.85rem;
+}
+footer section[aria-label=footer-bottom] .left ul {
+  display: flex;
+  gap: 1rem;
+}
+footer section[aria-label=footer-bottom] .left ul a {
+  font-size: 0.85rem;
+  color: #444;
+  transition: all 0.5s ease;
+}
+footer section[aria-label=footer-bottom] .left ul a:hover {
+  text-decoration: underline;
+}
+footer section[aria-label=footer-bottom] .right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+footer section[aria-label=footer-bottom] .right ul {
+  display: flex;
+  gap: 1rem;
+}
+footer section[aria-label=footer-bottom] .right ul a {
+  color: #444;
+  font-size: 1rem;
+  transition: all 0.5s ease;
+}
+footer section[aria-label=footer-bottom] .right ul a:hover {
+  color: #e15d60;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  gap: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 2rem;
+}
+.filter-section::-webkit-scrollbar {
+  display: none;
+}
+.filter-section .filter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #777;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.5s ease;
+}
+.filter-section .filter-item i {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+.filter-section .filter-item:hover {
+  color: #000;
+  font-weight: 800;
+}
+.filter-section .filter-button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid #ddd;
+  padding: 0.6rem 1rem;
+  border-radius: 0.85rem;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.filter-section .filter-button:hover {
+  background-color: #f7f7f7;
+}
+
+.cards-section {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.cards-section .card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+.cards-section .card-image {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.cards-section .card-image img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.cards-section .card-image .favorite-label {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  background-color: #fff;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.6rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 999px;
+}
+.cards-section .card-image .favorite-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #777;
+}
+.cards-section .card-image .favorite-btn:hover {
+  color: #e15d60;
+}
+.cards-section .card-image:hover img {
+  scale: 1.03;
+}
+.cards-section .card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.cards-section .card-content .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.cards-section .card-content .card-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+  white-space: nowrap;
+}
+.cards-section .card-content .card-header .rating .stars {
+  font-size: 1rem;
+  color: #444;
+  white-space: nowrap;
+}
+.cards-section .card-content .distance,
+.cards-section .card-content .dates {
+  font-size: 0.85rem;
+  color: #777;
+}
+.cards-section .card-content .price {
+  font-size: 1rem;
+  color: #000;
+}
+
+.experience-hero, .experience-share {
+  background-color: #fef0f0;
+  padding: 4rem 1rem 2rem;
+  text-align: center;
+}
+.experience-hero h1, .experience-share h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.experience-hero p, .experience-share p {
+  color: #777;
+  font-size: 1rem;
+}
+.experience-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.6rem 2rem;
+}
+@media (max-width: 576px) {
+  .experience-filter {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+.experience-filter button {
+  background-color: #fff;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.experience-filter button:hover {
+  background-color: #f7f7f7;
+}
+@media (max-width: 576px) {
+  .experience-filter button {
+    width: 100px;
+  }
+}
+.experience-story {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  align-items: center;
+}
+@media (max-width: 992px) {
+  .experience-story {
+    flex-direction: column;
+  }
+}
+.experience-story .text {
+  flex: 1;
+}
+@media (max-width: 992px) {
+  .experience-story .text {
+    text-align: center;
+  }
+}
+.experience-story .text h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+.experience-story .text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+.experience-story .image {
+  flex: 1;
+}
+.experience-story .image img {
+  width: 100%;
+  border-radius: 12px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.experience-reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+.experience-reviews-card {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.experience-reviews-card:hover {
+  transform: translateY(-5px);
+}
+.experience-reviews-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.experience-reviews-card .content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.experience-reviews-card .content .location {
+  font-size: 0.85rem;
+  color: #777;
+}
+.experience-reviews-card .content .review {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+.experience-reviews-card .content .rating {
+  color: #e15d60;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.experience-share {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.experience-share h2 {
+  font-size: 1.5rem;
+}
+.experience-share button {
+  background-color: #fb385c;
+  color: #fff;
+  padding: 0.6rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.experience-share button:hover {
+  opacity: 0.8;
+}
+
+.profile {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .profile {
+    justify-content: center;
+    text-align: center;
+  }
+}
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile-info h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.profile-info p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 0.3rem;
+}
+.profile-info button {
+  margin-top: 0.6rem;
+  background-color: #fb385c;
+  padding: 0.6rem 1rem;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.profile-info button:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.745);
+}
+
+.rent-history {
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+}
+.rent-history h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.rent-history-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.rent-history-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.rent-history-card img {
+  width: 150px;
+  height: 80px;
+  border-radius: 12px;
+}
+.rent-history-card div {
+  flex: 1;
+  padding: 0.6rem 2rem;
+}
+.rent-history-card div h4 {
+  font-size: 1rem;
+}
+.rent-history-card div p {
+  font-size: 0.85rem;
+  color: #777;
+}
+.rent-history-card .status {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}
+.rent-history-card .status.complated {
+  background-color: #e7f9f1;
+  color: #2e8b58;
+}
+.rent-history-card .status.cancelled {
+  background-color: #fbeaea;
+  color: #c8534a;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #444;
+  font-size: 0.85rem;
+}/*# sourceMappingURL=style.css.map */
